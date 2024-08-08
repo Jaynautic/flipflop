@@ -1,0 +1,74 @@
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    margin: auto;
+    height: auto;
+    width: auto;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+#gameContainer {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    gap: 60px;
+    padding-bottom: 60px;
+}
+
+#mainGrid {
+    display: grid;
+    margin: auto;
+    grid-template-rows: 60px 60px 60px 40px;
+}
+
+#submitContainer {
+    display: flex;
+    margin: auto;
+    gap: 12px;
+}
+
+.gridRow {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 40px;
+}
+
+.gridItem {
+    display: flex;
+    background-color: #e2e2e2;
+    background-image: linear-gradient(to bottom left, #e2e2e2, #e2e2e2);
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+#newButton {
+    background-image: linear-gradient(to bottom right, #454545, #1e1e1e);
+    color: #fafafa;
+    border-style: none;
+    height: 38px;
+    width: 84px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+#refreshButton {
+    background-image: linear-gradient(to bottom right, #efefef, #e2e2e2);
+    color: #343434;
+    border-style: none;
+    height: 38px;
+    width: 48px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 800;
+}
