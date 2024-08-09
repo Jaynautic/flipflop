@@ -78,12 +78,40 @@ function tileFunction(e) {
 }
 
 function newFunction() {
-    let ranNum1 = Math.floor(Math.random() * 4)
-    let ranNum2 = Math.floor(Math.random() * 4)
 
-    document.getElementById(gridId[ranNum1][ranNum2]).style.backgroundImage = "linear-gradient(to bottom left, #676767, #000000)";
-    document.getElementById(gridId[ranNum2][ranNum1]).style.backgroundImage = "linear-gradient(to bottom left, #676767, #000000)";
+    currentTiles = [];
+
+    let newTiles = document.getElementsByClassName("gridItem");
+
+    for (let i = 0; i < 16; i++) {
+        newTiles[i].style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)"
+    }
+
+    let ranNum = 4 + Math.floor(Math.random() * 3)
+
+    for (let i = 0; i < ranNum; i++) {
+        let ranNum1 = Math.floor(Math.random() * 4)
+        let ranNum2 = Math.floor(Math.random() * 4)
+        let ranTile = gridId[ranNum1][ranNum2]
+
+        document.getElementById(ranTile).style.backgroundImage = "linear-gradient(to bottom left, #676767, #000000)";
+
+        currentTiles.push(ranTile);
+    }
+
+    console.log(currentTiles)
 }
 
 function refreshFunction() {
+    console.log(currentTiles)
+
+    let newTiles = document.getElementsByClassName("gridItem");
+
+    for (let i = 0; i < 16; i++) {
+        newTiles[i].style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)"
+    }
+
+    for (let i = 0; i < currentTiles.length; i++) {
+        document.getElementById(currentTiles[i]).style.backgroundImage = "linear-gradient(to bottom left, #676767, #000000)";
+    }
 }
