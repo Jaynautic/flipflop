@@ -24,6 +24,12 @@ function onPageLoad() {
 
 function tileFunction(e) {
     let tileState = document.getElementById(e.target.id).style.backgroundImage;
+
+    let house = e.target.id;
+    let ok = [gridId[0].indexOf(house), gridId[1].indexOf(house), gridId[2].indexOf(house), gridId[3].indexOf(house)];
+
+    console.log(house);
+    console.log(ok);
     
     if (tileState == "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))") {
         document.getElementById(e.target.id).style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)";
