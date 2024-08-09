@@ -18,8 +18,11 @@ const gridId = [
 ]
 
 
-function onPageLoad() {
+let rules = "RULES: Click on a dot to flip its state. This will flip the surrounding dots, too. Try to make all dots black by FLIP-FLOPPING!"
 
+function onPageLoad() {
+    window.alert(rules)
+    newFunction();
 }
 
 function tileFunction(e) {
