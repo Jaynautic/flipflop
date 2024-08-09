@@ -31,11 +31,50 @@ function tileFunction(e) {
     console.log(house);
     console.log(ok);
     
-    if (tileState == "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))") {
-        document.getElementById(e.target.id).style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)";
-    } else {
-        document.getElementById(e.target.id).style.backgroundImage = "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))";
-    }
+    for (let i = 0; i < ok.length; i++) {
+        if (ok[i] !== -1) {
+
+            if (tileState == "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))") {
+                document.getElementById(e.target.id).style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)";
+            } else {
+                document.getElementById(e.target.id).style.backgroundImage = "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))";
+            }
+
+            if (i !== 3) {
+            if (document.getElementById(gridId[i + 1][ok[i]]).style.backgroundImage == "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))") {
+                document.getElementById(gridId[i + 1][ok[i]]).style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)";
+            } else {
+                document.getElementById(gridId[i + 1][ok[i]]).style.backgroundImage = "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))";
+            }
+            }
+
+            if (i !== 0) {
+            if (document.getElementById(gridId[i - 1][ok[i]]).style.backgroundImage == "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))") {
+                document.getElementById(gridId[i - 1][ok[i]]).style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)";
+            } else {
+                document.getElementById(gridId[i - 1][ok[i]]).style.backgroundImage = "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))";
+            }
+            }
+            
+
+            if (ok[i] !== 3) {
+            if (document.getElementById(gridId[i][ok[i] + 1]).style.backgroundImage == "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))") {
+                document.getElementById(gridId[i][ok[i] + 1]).style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)";
+            } else {
+                document.getElementById(gridId[i][ok[i] + 1]).style.backgroundImage = "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))";
+            }
+            }
+
+            if (ok[i] !== 0) {
+            if (document.getElementById(gridId[i][ok[i] - 1]).style.backgroundImage == "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))") {
+                document.getElementById(gridId[i][ok[i] - 1]).style.backgroundImage = "linear-gradient(to bottom left, #e2e2e2, #e2e2e2)";
+            } else {
+                document.getElementById(gridId[i][ok[i] - 1]).style.backgroundImage = "linear-gradient(to left bottom, rgb(103, 103, 103), rgb(0, 0, 0))";
+            }
+            }
+
+        }
+      }
 }
 
 function newFunction() {
